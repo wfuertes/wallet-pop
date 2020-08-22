@@ -8,22 +8,21 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.concurrent.TimeoutException;
 
-public class MessageConsumer {
-    private static final String NO_ROUTING_KEY = "";
+public class MessageSubscriber {
     private static final String EXCHANGE_NAME = "earnings";
 
     private final ConnectionFactory factory;
 
     @Inject
-    public MessageConsumer(ConnectionFactory factory) {
+    public MessageSubscriber(ConnectionFactory factory) {
         this.factory = factory;
     }
 
-    public void consume(EventHandler handler) {
+    public void subscribe(String eventName, EventHandler handler) {
         try {
             final Channel channel = factory.newConnection().createChannel();
-            final String queue = channel.queueDeclare("wallet.EARNINGS_UPDATED", true, false, false, Collections.emptyMap()).getQueue();
-            channel.queueBind(queue, EXCHANGE_NAME, NO_ROUTING_KEY);
+            final String queue = channel.queueDeclare("wallet." + eventName, true, false, false, Collections.emptyMap()).getQueue();
+            channel.queueBind(queue, EXCHANGE_NAME, eventName);
 
             channel.basicConsume(queue, false, new DefaultConsumer(channel) {
                 @Override

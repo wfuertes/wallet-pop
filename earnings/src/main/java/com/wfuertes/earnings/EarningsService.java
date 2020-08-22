@@ -4,7 +4,6 @@ import com.wfuertes.infra.JsonMapper;
 import com.wfuertes.infra.MessagePublisher;
 
 import javax.inject.Inject;
-import java.nio.charset.StandardCharsets;
 
 public class EarningsService {
     private final JsonMapper mapper;
@@ -16,7 +15,7 @@ public class EarningsService {
         this.publisher = publisher;
     }
 
-    public void publishEarnings(Earnings earnings) {
-        publisher.publish(mapper.toJson(earnings).getBytes(StandardCharsets.UTF_8));
+    public void publishEarningsUpdatedEvent(Earnings earnings) {
+        publisher.publish("EARNINGS_UPDATED", mapper.toJson(earnings));
     }
 }

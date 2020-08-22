@@ -12,7 +12,13 @@ public class EarningsUpdateEvent {
     private final int subsidies;
     private final Earnings.JobStatus jobStatus;
 
-    public EarningsUpdateEvent(long jobId, int fee, int tip, int bonus, int adjustments, int subsidies, Earnings.JobStatus jobStatus) {
+    public EarningsUpdateEvent(long jobId,
+                               int fee,
+                               int tip,
+                               int bonus,
+                               int adjustments,
+                               int subsidies,
+                               Earnings.JobStatus jobStatus) {
         this.jobId = jobId;
         this.fee = fee;
         this.tip = tip;
@@ -20,19 +26,6 @@ public class EarningsUpdateEvent {
         this.adjustments = adjustments;
         this.subsidies = subsidies;
         this.jobStatus = jobStatus;
-    }
-
-    @Override
-    public String toString() {
-        return "Earnings{" +
-                "jobId=" + jobId +
-                "fee=" + fee +
-                ", tip=" + tip +
-                ", bonus=" + bonus +
-                ", adjustments=" + adjustments +
-                ", subsidies=" + subsidies +
-                ", jobStatus=" + jobStatus +
-                '}';
     }
 
     public Earnings toDomain(Instant version) {

@@ -32,7 +32,7 @@ public class EarningsApp {
                     random(0, 200),
                     random(50, 100),
                     fakeJobStatus()
-            )).limit(1000).forEach(earningsService::publishEarnings);
+            )).limit(1000).forEach(earningsService::publishEarningsUpdatedEvent);
         }
     }
 
