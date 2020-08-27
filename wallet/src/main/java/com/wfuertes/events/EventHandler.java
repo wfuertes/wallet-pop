@@ -1,4 +1,4 @@
-package com.wfuertes.earnings;
+package com.wfuertes.events;
 
 public interface EventHandler {
 

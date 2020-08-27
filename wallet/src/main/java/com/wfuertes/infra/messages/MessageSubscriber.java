@@ -1,7 +1,7 @@
-package com.wfuertes.infra;
+package com.wfuertes.infra.messages;
 
 import com.rabbitmq.client.*;
-import com.wfuertes.earnings.EventHandler;
+import com.wfuertes.events.EventHandler;
 
 import javax.inject.Inject;
 import java.io.IOException;

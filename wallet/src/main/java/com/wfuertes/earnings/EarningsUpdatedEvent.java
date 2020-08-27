@@ -2,7 +2,7 @@ package com.wfuertes.earnings;
 
 import java.time.Instant;
 
-public class EarningsUpdateEvent {
+public class EarningsUpdatedEvent {
 
     private final long jobId;
     private final int fee;
@@ -12,13 +12,13 @@ public class EarningsUpdateEvent {
     private final int subsidies;
     private final Earnings.JobStatus jobStatus;
 
-    public EarningsUpdateEvent(long jobId,
-                               int fee,
-                               int tip,
-                               int bonus,
-                               int adjustments,
-                               int subsidies,
-                               Earnings.JobStatus jobStatus) {
+    public EarningsUpdatedEvent(long jobId,
+                                int fee,
+                                int tip,
+                                int bonus,
+                                int adjustments,
+                                int subsidies,
+                                Earnings.JobStatus jobStatus) {
         this.jobId = jobId;
         this.fee = fee;
         this.tip = tip;

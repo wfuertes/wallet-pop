@@ -1,5 +1,7 @@
 .idea/
 wallet-pop.iml
+wallet.iml
+earnings.iml
 earnings/target/
 wallet/target/
 

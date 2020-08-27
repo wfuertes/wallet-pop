@@ -1,20 +1,14 @@
 package com.wfuertes;
 
-import static org.junit.Assert.assertTrue;
-
+import com.wfuertes.sql.tables.records.EarningsRecord;
+import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class WalletAppTest
-{
-    /**
-     * Rigorous Test :-)
-     */
+
+public class WalletAppTest {
+
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void shouldAnswerWithTrue() {
+        Assert.assertFalse(new EarningsRecord().equals(null));
     }
 }

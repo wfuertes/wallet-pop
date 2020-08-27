@@ -2,7 +2,7 @@ package com.wfuertes;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.wfuertes.infra.MessageService;
+import com.wfuertes.infra.messages.MessageService;
 import com.wfuertes.infra.WalletModule;
 
 public class WalletApp {
