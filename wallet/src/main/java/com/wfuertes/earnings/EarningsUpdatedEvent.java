@@ -11,6 +11,7 @@ public class EarningsUpdatedEvent {
     private final int adjustments;
     private final int subsidies;
     private final Earnings.JobStatus jobStatus;
+    private final String employeeId;
 
     public EarningsUpdatedEvent(long jobId,
                                 int fee,
@@ -18,7 +19,8 @@ public class EarningsUpdatedEvent {
                                 int bonus,
                                 int adjustments,
                                 int subsidies,
-                                Earnings.JobStatus jobStatus) {
+                                Earnings.JobStatus jobStatus,
+                                String employeeId) {
         this.jobId = jobId;
         this.fee = fee;
         this.tip = tip;
@@ -26,9 +28,10 @@ public class EarningsUpdatedEvent {
         this.adjustments = adjustments;
         this.subsidies = subsidies;
         this.jobStatus = jobStatus;
+        this.employeeId = employeeId;
     }
 
     public Earnings toDomain(Instant version) {
-        return new Earnings(jobId, fee, tip, bonus, adjustments, subsidies, jobStatus, version);
+        return new Earnings(jobId, fee, tip, bonus, adjustments, subsidies, jobStatus, employeeId, version);
     }
 }

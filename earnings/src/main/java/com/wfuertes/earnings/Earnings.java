@@ -8,8 +8,9 @@ public class Earnings {
     private final int adjustments;
     private final int subsidies;
     private final JobStatus jobStatus;
+    private final String employeeId;
 
-    public Earnings(long jobId, int fee, int tip, int bonus, int adjustments, int subsidies, JobStatus jobStatus) {
+    public Earnings(long jobId, int fee, int tip, int bonus, int adjustments, int subsidies, JobStatus jobStatus, String employeeId) {
         this.jobId = jobId;
         this.fee = fee;
         this.tip = tip;
@@ -17,6 +18,7 @@ public class Earnings {
         this.adjustments = adjustments;
         this.subsidies = subsidies;
         this.jobStatus = jobStatus;
+        this.employeeId = employeeId;
     }
 
     public enum JobStatus {

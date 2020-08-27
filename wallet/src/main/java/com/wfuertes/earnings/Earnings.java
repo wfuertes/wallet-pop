@@ -11,9 +11,10 @@ public class Earnings {
     private final int adjustments;
     private final int subsidies;
     private final JobStatus jobStatus;
+    private final String employeeId;
     private final Instant version;
 
-    public Earnings(long jobId, int fee, int tip, int bonus, int adjustments, int subsidies, JobStatus jobStatus, Instant version) {
+    public Earnings(long jobId, int fee, int tip, int bonus, int adjustments, int subsidies, JobStatus jobStatus, String employeeId, Instant version) {
         this.jobId = jobId;
         this.fee = fee;
         this.tip = tip;
@@ -21,6 +22,7 @@ public class Earnings {
         this.adjustments = adjustments;
         this.subsidies = subsidies;
         this.jobStatus = jobStatus;
+        this.employeeId = employeeId;
         this.version = version;
     }
 
@@ -52,6 +54,10 @@ public class Earnings {
         return jobStatus;
     }
 
+    public String employeeId() {
+        return employeeId;
+    }
+
     public Instant version() {
         return version;
     }
@@ -60,12 +66,13 @@ public class Earnings {
     public String toString() {
         return "Earnings{" +
                 "jobId=" + jobId +
-                "fee=" + fee +
+                ", fee=" + fee +
                 ", tip=" + tip +
                 ", bonus=" + bonus +
                 ", adjustments=" + adjustments +
                 ", subsidies=" + subsidies +
                 ", jobStatus=" + jobStatus +
+                ", employeeId='" + employeeId + '\'' +
                 ", version=" + version +
                 '}';
     }

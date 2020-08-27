@@ -33,5 +33,4 @@ public class EarningsService {
             LOG.debug("INSERTING record: " + earnings);
         }
     }
-
 }

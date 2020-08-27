@@ -32,6 +32,7 @@ public class JooqEarningsRepository implements EarningsRepository {
                         record.getAdjustments(),
                         record.getSubsidies(),
                         Earnings.JobStatus.valueOf(record.getJobStatus()),
+                        record.getEmployeeId(),
                         record.getVersion().toInstant(UTC)
                 ));
     }
@@ -48,6 +49,7 @@ public class JooqEarningsRepository implements EarningsRepository {
                             earnings.adjustments(),
                             earnings.subsidies(),
                             earnings.jobStatus().name(),
+                            earnings.employeeId(),
                             earnings.version().atOffset(UTC).toLocalDateTime()
                     )).execute();
         });
@@ -65,6 +67,7 @@ public class JooqEarningsRepository implements EarningsRepository {
                             earnings.adjustments(),
                             earnings.subsidies(),
                             earnings.jobStatus().name(),
+                            earnings.employeeId(),
                             earnings.version().atOffset(UTC).toLocalDateTime()
                     )).where(EARNINGS.JOB_ID.eq(earnings.jobId()))
                     .execute();
