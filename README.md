@@ -1,4 +1,4 @@
-# wallet-pop
+# wallet-pop [![Build Status](https://travis-ci.com/wfuertes/wallet-pop.svg?branch=master)](https://travis-ci.com/wfuertes/wallet-pop)
 
 ### Required
 ```
