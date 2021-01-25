@@ -1,4 +1,4 @@
-# wallet-pop [![Build Status](https://travis-ci.com/wfuertes/wallet-pop.svg?branch=master)](https://travis-ci.com/wfuertes/wallet-pop)
+# wallet-pop [![wfuertes](https://circleci.com/gh/wfuertes/wallet-pop.svg?style=shield)](https://github.com/wfuertes/wallet-pop)
 
 ### Required
 ```
